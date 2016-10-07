@@ -23,6 +23,7 @@ public class Users {
 		users.add(new User("1106.priyansh@gmail.com","1234"));
 		users.add(new User("2205.pooja@gmail.com","1234"));
 		users.add(new User("2606.sakshi@gmail.com","1234"));
+		users.add(new User("2606.varun@gmail.com","1234"));
 	}
 
 }

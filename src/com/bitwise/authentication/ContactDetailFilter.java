@@ -50,35 +50,43 @@ public class ContactDetailFilter implements Filter {
 		String country = request.getParameter("country");
 		String landline = request.getParameter("landline");
 		String mobile = request.getParameter("mobile");
+		String msg = "";
 
 		System.out.println("contact detail filter");
 
 		if (address.equals("")) {
-			pw.print("<font size='3' color='red'>Invalid address input </font>");
+			msg = "Please enter your address";
+			request.setAttribute("msg", msg);
 			req.getRequestDispatcher("contactDetail.jsp").include(request, response);
 
 		} else if (!Validation.validatePincode(pincode)) {
-			pw.print("<font size='3' color='red'>Invalid pincode input </font>");
+			msg = "Please enter a valid pincode of 6 digit";
+			request.setAttribute("msg", msg);
 			req.getRequestDispatcher("contactDetail.jsp").include(request, response);
 
 		} else if (city == null) {
-			pw.print("<font size='3' color='red'>Invalid city name input </font>");
+			msg = "Please enter your city";
+			request.setAttribute("msg", msg);
 			req.getRequestDispatcher("contactDetail.jsp").include(request, response);
 
 		} else if (state == null) {
-			pw.print("<font size='3' color='red'>Invalid state input </font>");
+			msg = "Please enter your state";
+			request.setAttribute("msg", msg);
 			req.getRequestDispatcher("contactDetail.jsp").include(request, response);
 
 		} else if (country == null) {
-			pw.print("<font size='3' color='red'>Invalid country input </font>");
+			msg = "Please enter your country";
+			request.setAttribute("msg", msg);
 			req.getRequestDispatcher("contactDetail.jsp").include(request, response);
 
 		} else if (!Validation.validateLandline(landline)) {
-			pw.print("<font size='3' color='red'>Invalid landline input </font>");
+			msg = "Please enter a valid 7 digit landline number";
+			request.setAttribute("msg", msg);
 			req.getRequestDispatcher("contactDetail.jsp").include(request, response);
 
 		} else if (!Validation.validateMobile(mobile)) {
-			pw.print("<font size='3' color='red'>Invalid mobile input </font>");
+			msg = "Please enter a valid 10 digit mobile number";
+			request.setAttribute("msg", msg);
 			req.getRequestDispatcher("contactDetail.jsp").include(request, response);
 
 		} else {

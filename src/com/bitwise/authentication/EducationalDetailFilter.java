@@ -49,35 +49,42 @@ public class EducationalDetailFilter implements Filter {
 		String cgpa =  request.getParameter("cgpa");
 		String[] favouriteSubject =  request.getParameterValues("subject");
 		System.out.println("educational detail filter");
+		String msg = "";
 		
 	
 		
 
 			if(schoolName.equals("")){
-				pw.print("<font size='3' color='red'>Invalid schoolName input </font>");
+				msg="Please enter your school name";
+				req.setAttribute("msg", msg);
 				req.getRequestDispatcher("educationDetail.jsp").include(request, response);
 				
 			}else if(!Validation.validatePercentage(tenth)){
-				pw.print("<font size='3' color='red'>Invalid tenth input </font>");
+				msg="Please enter valid 10th%";
+				req.setAttribute("msg", msg);
 				req.getRequestDispatcher("educationDetail.jsp").include(request, response);
 				
 			}else if(!Validation.validatePercentage(twelth)){
-				pw.print("<font size='3' color='red'>Invalid twelth input </font>");
+				msg="Please enter valid 12%";
+				req.setAttribute("msg", msg);
 				req.getRequestDispatcher("educationDetail.jsp").include(request, response);
 				
 			}
 			else if(collegeName.equals("")){
-				pw.print("<font size='3' color='red'>Invalid collegeName input </font>");
+				msg="Please enter your college name";
+				req.setAttribute("msg", msg);
 				req.getRequestDispatcher("educationDetail.jsp").include(request, response);
 				
 			}
 			else if(!Validation.validatePercentage(cgpa)){
-				pw.print("<font size='3' color='red'>Invalid cgpa input </font>");
+				msg="Please enter valid cgpa ";
+				req.setAttribute("msg", msg);
 				req.getRequestDispatcher("educationDetail.jsp").include(request, response);
 				
 			}
 			else if(favouriteSubject == null ){
-				pw.print("<font size='3' color='red'>Invalid favouriteSubject input </font>");
+				msg="Please select your favourite subjects";
+				req.setAttribute("msg", msg);
 				req.getRequestDispatcher("educationDetail.jsp").include(request, response);
 				
 			}

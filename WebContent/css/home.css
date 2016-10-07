@@ -22,6 +22,11 @@ body {
 	color: red;
 }
 
+#msg {
+	color: red;
+	text-align: center;
+}
+
 ul {
 	list-style-type: none;
 	margin: 0 auto;

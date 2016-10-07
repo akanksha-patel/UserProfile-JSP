@@ -32,9 +32,7 @@ public class AuthFilter implements Filter {
 		if (currUri.equals(contextPath + "/personalDetail.jsp")) {
 			if (!flag) {
 				System.out.println("pd page");
-				out.print("<font color='red' size='20'>");
-				out.print("Login Firstt!");
-				out.print("<font>");
+				out.print("<font color='red' size='20'>Login Firstt!<font>");
 				req.getRequestDispatcher("login.jsp").include(request, response);
 
 				return;
@@ -59,13 +57,29 @@ public class AuthFilter implements Filter {
 
 		}
 		
+		if (currUri.equals(contextPath + "/educationDetail.jsp")) {
+			if (!flag) {
+				req.getRequestDispatcher("login.jsp").include(request, response);
+
+				return;
+			}
+
+		}
+		
+		if (currUri.equals(contextPath + "/profile.jsp")) {
+			if (!flag) {
+				req.getRequestDispatcher("login.jsp").include(request, response);
+
+				return;
+			}
+
+		}
+		
 
 		if (currUri.equals(contextPath + "/ShowLogoutServlet")) {
 			if (!isSessionExpired(req)) {
 				req.getSession(false).invalidate();
-				out.print("<font color='red' size='20'>");
-				out.print("You are successfully logged out!");
-				out.print("<font>");
+				out.print("<font color='red' size='20'>You are successfully logged out!<font>");	
 				req.getRequestDispatcher("login.jsp").include(request, response);
 
 				return;

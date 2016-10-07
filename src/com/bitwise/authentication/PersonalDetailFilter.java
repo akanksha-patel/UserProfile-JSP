@@ -41,49 +41,62 @@ public class PersonalDetailFilter implements Filter {
 		String dob = request.getParameter("dob");
 		String occupation = request.getParameter("occupation");
 		String nationality = request.getParameter("nationality");
+		String msg = "";
 		System.out.println(dob);
 		System.out.println("personal detail filter");
 
 		if (!Validation.validateName(name)) {
-			pw.print("<font size='3' color='red'>Invalid  name input </font>");
+			msg= "Name should not contain letters or special symbol ";
+			request.setAttribute("msg", msg);
 			req.getRequestDispatcher("personalDetail.jsp").include(request, response);
 
 		} else if (!Validation.validateName(fName)) {
-			pw.print("<font size='3' color='red'>Invalid father name input </font>");
+			msg= "Father's name should not contain letters or special symbol ";
+			request.setAttribute("msg", msg);
 			req.getRequestDispatcher("personalDetail.jsp").include(request, response);
 
 		} else if (!Validation.validateName(mName)) {
-			pw.print("<font size='3' color='red'>Invalid mother name input </font>");
+			msg= "Mother's name should not contain letters or special symbol ";
+			request.setAttribute("msg", msg);
 			req.getRequestDispatcher("personalDetail.jsp").include(request, response);
 
 		} else if (gender == null) {
-			pw.print("<font size='3' color='red'>Invalid gender input </font>");
+			msg= "Please select your gender ";
+			
 			req.getRequestDispatcher("personalDetail.jsp").include(request, response);
 
 		} else if (hobbies == null) {
-			pw.print("<font size='3' color='red'>Invalid hobbies input </font>");
+			msg= "Please select your hobbies ";
+			request.setAttribute("msg", msg);
 			req.getRequestDispatcher("personalDetail.jsp").include(request, response);
 
 		} else if (!Validation.validateDob(dob)) {
 			System.out.println("here");
-			pw.print("<font size='3' color='red'>Invalid dob input </font>");
+			msg= "Date of birth is invalid ";
+			request.setAttribute("msg", msg);
 			req.getRequestDispatcher("personalDetail.jsp").include(request, response);
 
 		} else if (email == null || !Validation.validateEmail(email)) {
-			pw.print("<font size='3' color='red'>Invalid email input </font>");
+			msg= "Invalid email address ";
+			request.setAttribute("msg", msg);
 			req.getRequestDispatcher("personalDetail.jsp").include(request, response);
 
 		} else if (occupation == null) {
-			pw.print("<font size='3' color='red'>Invalid occupation input </font>");
+			msg= "Please select your ocuupation ";
+			request.setAttribute("msg", msg);
 			req.getRequestDispatcher("personalDetail.jsp").include(request, response);
 
 		} else if (!Validation.validateName(nationality)) {
-			pw.print("<font size='3' color='red'>Invalid nationality input </font>");
+			msg= "Please enter a valid country ";
+			request.setAttribute("msg", msg);
 			req.getRequestDispatcher("personalDetail.jsp").include(request, response);
 
-		} else {
+		} 
+		else {
 			chain.doFilter(request, response);
 		}
+		
+		request.setAttribute("msg", msg);
 
 	}
 

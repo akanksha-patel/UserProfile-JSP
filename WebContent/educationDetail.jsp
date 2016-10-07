@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,8 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<div id="msg">${msg}</div>
 	<div id="main">
-
 
 		<form action="EducationalDetailServlet">
 			<table>
@@ -35,23 +35,27 @@
 				<tr>
 					<td>College Name</td>
 					<td class="cln">:</td>
-					<td class="txtfldtd"> <input type="text" name=collegename></td>
-	
+					<td class="txtfldtd"><input type="text" name=collegename></td>
+
 				</tr>
-				
+
 				<tr>
 					<td>CGPA</td>
 					<td class="cln">:</td>
 					<td class="txtfldtd"><input type="text" name="cgpa"></td>
 				</tr>
-				
+
 				<tr>
 					<td>Favourite Subject</td>
 					<td class="cln">:</td>
-					<td class="txtfldtd"><input type="checkbox" value="dbms" name="subject"> DataBaseManagement System </td>
-		 			<td class="txtfldtd"><input type="checkbox" value="sepm" name="subject"> Software Engineering </td>
-		 			<td class="txtfldtd"><input type="checkbox" value="java" name="subject"> Java </td>
-		 			<td class="txtfldtd"><input type="checkbox" value="oracle" name="subject"> Oracle </td>
+					<td class="txtfldtd"><input type="checkbox" value="dbms"
+						name="subject"> DataBaseManagement System</td>
+					<td class="txtfldtd"><input type="checkbox" value="sepm"
+						name="subject"> Software Engineering</td>
+					<td class="txtfldtd"><input type="checkbox" value="java"
+						name="subject"> Java</td>
+					<td class="txtfldtd"><input type="checkbox" value="oracle"
+						name="subject"> Oracle</td>
 				</tr>
 				<tr>
 
