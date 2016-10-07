@@ -1,0 +1,80 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	background-color: #e7cfe4;
+}
+
+#title {
+	font-family: Tahoma, sans-serif;
+	font-weight: bold;
+	padding-bottom: 10px;
+	font-size: 22px;
+	text-align: center;
+	text-decoration: underline;
+}
+
+#warn {
+	color: red;
+	font-size: 12px;
+	float: right;
+}
+
+.lbl {
+	font-family: verdana;
+	font-size: 18px;
+	width: 35%;
+	text-align: right;
+	padding-top: 5px;
+}
+
+form {
+	/* position: absolute; */
+	left: 290px;
+	top: 170px;
+	width: auto;
+	height: auto;
+	border-radius: 5px;
+	font-family: verdana;
+	box-shadow: 10px 10px 5px #2a0b08;
+	background-color: white;
+}
+
+.cln {
+	width: 2%;
+}
+
+.txtfldtd {
+	width: 63%;
+}
+
+#title {
+	font-family: Constantia;
+	font-weight: bold;
+	padding-bottom: 10px;
+	font-size: 22px;
+	text-align: center;
+	text-decoration: underline;
+}
+
+.txtfld {
+	width: 180px;
+}
+
+#error {
+	color: red;
+	font-size: 20px;
+	font-family: verdana;
+	/* width:500px;
+	top:20px;
+	float:left;
+	text-align:center; */
+	padding: 4px;
+}
+
+.btn {
+	position: absolute;
+	left: 200px;
+	top: 150px;
+	background-color: pink;
+	color: pink;
+}

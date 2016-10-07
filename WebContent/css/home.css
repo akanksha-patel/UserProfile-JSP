@@ -1,0 +1,72 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	margin: 0px;
+	background-color: #5f2f59;
+	width: 1000px;
+	height: 700px;
+}
+
+#main {
+	margin-left: 80px;
+	margin-top: 100px;
+	height: 450px;
+	width: 1000px;
+	background-color: white;
+	position: relative;
+}
+
+#info {
+	height: 470px;
+	width: 200px;
+	color: red;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0 auto;
+	padding-left: 30%;
+}
+
+li {
+	display: inline;
+	float: left;
+}
+
+li:hover ul {
+	display: block;
+}
+
+a:link, a:visited {
+	font-family: verdana;
+	font-size: 14;
+	display: block;
+	width: 100px;
+	color: white;
+	background: linear-gradient(to top, #080808, #101010, #181818, #202020, #282828,
+		#303030, #383838, #404040, #484848, #505050, #585858, #606060, #686868
+		, #707070, #787878, #808080, #888888, #909090, #989898);
+	text-align: center;
+	padding: 8px;
+	text-decoration: none;
+	text-transform: uppercase;
+	border: 1px solid #162939;
+}
+
+a:hover, a:active {
+	background: linear-gradient(to bottom, #080808, #101010, #181818, #202020, #282828,
+		#303030, #383838, #404040, #484848, #505050, #585858, #606060, #686868
+		, #707070, #787878, #808080, #888888, #909090, #989898);;
+	color: white;
+}
+
+.a {
+	height: 0;
+	overflow: hidden;
+	padding: 0;
+	-webkit-transition: height .25s ease .1s;
+	-moz-transition: height .25s ease .1s;
+	-o-transition: height .25s ease .1s;
+	-ms-transition: height .25s ease .1s;
+	transition: height .25s ease .1s;
+}
